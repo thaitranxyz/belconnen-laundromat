@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://belconnenlaundromat.com.au/sitemap-index.xml
