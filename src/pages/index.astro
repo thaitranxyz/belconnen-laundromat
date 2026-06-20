@@ -6,7 +6,7 @@ const phoneHref = 'tel:+61262511556';
 const address = '3/68 Josephson Street, Belconnen ACT 2617';
 
 const services = [
-  { t: 'Self Service Wash & Dry', d: 'Modern high-capacity washers and dryers designed for speed and great results.', i: 'washer' },
+  { t: 'Full-Service Wash & Dry', d: 'Our friendly team washes and dries your laundry for you on modern high-capacity machines.', i: 'washer' },
   { t: 'Wash, Dry & Fold', d: "Short on time? Leave it with us and we'll wash, dry and fold it for you.", i: 'fold' },
   { t: 'Dry Cleaning Drop Off', d: 'Convenient dry-cleaning collection and drop-off — no extra trip.', i: 'hanger' },
   { t: 'Commercial Laundry', d: 'Reliable solutions for businesses, Airbnb hosts, tradies and hospitality.', i: 'commercial' },
@@ -41,8 +41,8 @@ const icons = {
 };
 ---
 <Layout
-  title="Belconnen Laundromat | Self-Service Laundry in Belconnen, ACT"
-  description="Belconnen Laundromat — modern self-service wash & dry, wash-dry-fold, dry cleaning and commercial laundry. Open 7 days at 3/68 Josephson St, Belconnen ACT. Come in cold. Leave warm.">
+  title="Belconnen Laundromat | Full-Service Laundry in Belconnen, ACT"
+  description="Belconnen Laundromat — full-service wash & dry, wash-dry-fold, dry cleaning and commercial laundry. Our friendly team does it for you. Open 7 days at 3/68 Josephson St, Belconnen ACT. Come in cold. Leave warm.">
   <script type="application/ld+json" slot="head" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LaundryService',
@@ -68,8 +68,9 @@ const icons = {
   <main>
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-overlay"></div>
       <div class="hero-text">
-        <span class="eyebrow">Self-Service Laundry · Belconnen ACT</span>
+        <span class="eyebrow">Full-Service Laundry · Belconnen ACT</span>
         <h1>Come In Cold.<br /><span class="accent">Leave Warm.</span></h1>
         <p>A clean, welcoming laundromat with modern machines and friendly service — built for Canberra. We do the laundry. You do life.</p>
         <div class="hero-cta">
@@ -78,7 +79,6 @@ const icons = {
         </div>
         <p class="hero-tag">Clean clothes. Warm washes. Friendly service.</p>
       </div>
-      <div class="hero-art"><img src="/logo.png" alt="Belconnen Laundromat logo" width="380" /></div>
     </section>
 
     <!-- SERVICES -->
@@ -122,7 +122,7 @@ const icons = {
     <section class="promo">
       <div>
         <h2>First Wash <strong>20% Off</strong></h2>
-        <p>On your first self-service wash or dry. New customers only.</p>
+        <p>On your first wash or dry with us. New customers only.</p>
       </div>
       <a class="btn btn-dark" href={phoneHref}>Claim Your Discount</a>
     </section>
@@ -195,16 +195,21 @@ const icons = {
 
   /* HERO */
   .hero {
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: center;
-    padding: 5rem 5vw; background: linear-gradient(160deg, var(--cream), var(--grey));
+    position: relative; display: flex; align-items: center; min-height: 78vh;
+    padding: 6rem 5vw; overflow: hidden;
+    background: url('/hero.png') center/cover no-repeat;
   }
-  .eyebrow { color: var(--slate); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
-  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 800; margin: 1rem 0; text-transform: uppercase; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, rgba(27,36,48,.88) 0%, rgba(27,36,48,.66) 45%, rgba(27,36,48,.3) 100%);
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .eyebrow { color: var(--light); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); font-weight: 800; margin: 1rem 0; text-transform: uppercase; color: #fff; }
   .hero h1 .accent { color: var(--terra); }
-  .hero-text > p { font-size: 1.15rem; max-width: 36ch; color: #33414f; }
+  .hero-text > p { font-size: 1.15rem; max-width: 40ch; color: rgba(246,242,238,.9); }
   .hero-cta { display: flex; gap: 1rem; margin: 1.75rem 0 1rem; flex-wrap: wrap; }
-  .hero-tag { font-style: italic; color: var(--slate); font-weight: 600; }
-  .hero-art img { margin: 0 auto; filter: drop-shadow(0 20px 40px rgba(27,36,48,.18)); }
+  .hero-tag { font-style: italic; color: var(--light); font-weight: 600; }
 
   /* SECTIONS */
   .section { padding: 5rem 5vw; }
@@ -274,10 +279,7 @@ const icons = {
   @media (max-width: 900px) {
     .grid-3 { grid-template-columns: repeat(2, 1fr); }
     .grid-5 { grid-template-columns: repeat(2, 1fr); }
-    .hero { grid-template-columns: 1fr; text-align: center; }
-    .hero-text > p { margin: 0 auto; }
-    .hero-cta { justify-content: center; }
-    .hero-art { order: -1; }
+    .hero { min-height: 70vh; }
     .visit-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {

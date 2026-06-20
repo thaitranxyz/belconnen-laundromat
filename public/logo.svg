@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 470" fill="none">
+  <defs>
+    <clipPath id="porthole"><circle cx="210" cy="180" r="116"/></clipPath>
+  </defs>
+
+  <!-- door latch -->
+  <rect x="50" y="150" width="44" height="60" rx="12" fill="#647B8C" stroke="#1B2430" stroke-width="4"/>
+  <circle cx="73" cy="168" r="3.5" fill="#1B2430"/>
+  <circle cx="73" cy="192" r="3.5" fill="#1B2430"/>
+
+  <!-- porthole rings -->
+  <circle cx="210" cy="180" r="140" fill="#647B8C" stroke="#1B2430" stroke-width="4"/>
+  <circle cx="210" cy="180" r="116" fill="#F6F2EE" stroke="#1B2430" stroke-width="4"/>
+
+  <!-- scene inside the glass -->
+  <g clip-path="url(#porthole)">
+    <!-- Black Mountain -->
+    <path d="M104 308 Q116 250 158 226 Q188 206 210 206 Q234 208 262 230 Q304 256 316 308 Z" fill="#1B2430"/>
+    <!-- Telstra Tower -->
+    <path d="M206 210 L208 146 L201 146 L201 138 L207 138 L209 104 L210 99 L211 104 L213 138 L219 138 L219 146 L212 146 L214 210 Z" fill="#1B2430"/>
+
+    <!-- bubbles -->
+    <g stroke="#647B8C" stroke-width="4" fill="none">
+      <circle cx="154" cy="126" r="18"/>
+      <circle cx="136" cy="164" r="11"/>
+      <circle cx="168" cy="100" r="8"/>
+      <circle cx="264" cy="138" r="16"/>
+      <circle cx="284" cy="116" r="9"/>
+    </g>
+    <circle cx="148" cy="119" r="4" fill="#8FA4B3"/>
+    <circle cx="258" cy="131" r="4" fill="#8FA4B3"/>
+    <circle cx="186" cy="180" r="5" fill="#1B2430"/>
+    <circle cx="250" cy="176" r="5" fill="#1B2430"/>
+
+    <!-- foam / suds -->
+    <path d="M88 280 Q118 268 140 280 Q163 292 186 280 Q210 268 234 280 Q258 292 282 280 Q304 270 332 280 L332 320 L88 320 Z" fill="#8FA4B3"/>
+    <path d="M88 280 Q118 268 140 280 Q163 292 186 280 Q210 268 234 280 Q258 292 282 280 Q304 270 332 280" stroke="#F6F2EE" stroke-width="4" fill="none"/>
+    <g fill="#F6F2EE" stroke="#1B2430" stroke-width="3">
+      <circle cx="140" cy="278" r="11"/>
+      <circle cx="176" cy="286" r="8"/>
+      <circle cx="214" cy="278" r="12"/>
+      <circle cx="254" cy="286" r="9"/>
+      <circle cx="290" cy="278" r="8"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <text x="210" y="385" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="58" letter-spacing="2" fill="#1B2430">BELCONNEN</text>
+  <text x="210" y="428" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="30" letter-spacing="11" fill="#D07A5C">LAUNDROMAT</text>
+</svg>
