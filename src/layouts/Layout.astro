@@ -1,5 +1,6 @@
 ---
 const { title, description, canonical = Astro.url.href } = Astro.props;
+const ogImage = new URL('/hero.png', Astro.site).href;
 ---
 <!doctype html>
 <html lang="en">
@@ -12,9 +13,15 @@ const { title, description, canonical = Astro.url.href } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#1B2430" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Belconnen Laundromat" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/logo.png" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <slot name="head" />
   </head>
   <body>
